@@ -1,0 +1,2 @@
+QPixmaps are for displaying images and are best optimized for that
+while QImages are best for editing rather than displaying!

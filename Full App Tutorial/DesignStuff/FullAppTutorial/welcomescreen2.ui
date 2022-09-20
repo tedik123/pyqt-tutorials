@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#Dialog{
+background-color:qlineargradient(spread:pad, x1:0.238, y1:0.386682, x2:0.960298, y2:0.966, stop:0 rgba(0, 0, 0, 255), stop:0.466501 rgba(170, 0, 127, 255), stop:0.719603 rgba(0, 0, 0, 255))}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget" native="true">
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>400</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <widget class="QWidget" name="widget_test" native="true">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>9</y>
+        <width>200</width>
+        <height>382</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>400</height>
+       </size>
+      </property>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>162</y>
+         <width>182</width>
+         <height>147</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Microsoft Himalaya</family>
+         <pointsize>28</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgb(255, 255, 255);
+font: 28pt &quot;Microsoft Himalaya&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Sign in or create a new account</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="login">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>315</y>
+         <width>58</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:20px;
+background-color: rgb(85, 85, 127);
+
+color: rgb(255, 255, 255);
+font: 900 14pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Log In</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="create_account">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>347</y>
+         <width>182</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:20px;
+background-color: rgb(85, 85, 127);
+
+color: rgb(255, 255, 255);
+font: 900 14pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Create a New Account</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>281</width>
+         <height>147</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>36</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 36pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Welcome</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

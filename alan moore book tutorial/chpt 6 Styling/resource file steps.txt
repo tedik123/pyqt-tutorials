@@ -1,0 +1,7 @@
+1. Write an XML-format file ending with .qrc
+    It should contain all the paths of the files we want to include
+
+2. Run the pyrcc5 tool to serialize and copmress these files into data contained in a python module
+            pyrcc5 resources.qrc -o resources.py
+3. Import the resulting python module into our application script
+4. Now it can be referenced with a special syntax
