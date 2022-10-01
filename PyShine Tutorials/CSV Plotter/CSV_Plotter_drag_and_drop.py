@@ -15,7 +15,13 @@ import seaborn as sns
 import pandas as pd
 # even tho it says there is an error it works fine
 import sip
+import platform
 
+# check the platform
+op_sys = platform.system()
+# we need this for OSx
+if op_sys == "Darwin":
+    from Foundation import NSURL
 
 # IMPORTANT TO MAKE EXECUTABLE:  python -m auto_py_to_exe
 # following this:
@@ -55,8 +61,49 @@ class MainWindow(qtw.QMainWindow):
         self.toolbar = Navi(self.canvas, self.centralwidget)
         self.horizontalLayout.addWidget(self.toolbar)
         self.verticalSpacer_item = self.verticalLayout.itemAt(0)
+
+        # drag and drop functionality
+        self.setup_drag_and_drop()
+
         # End main UI Code
         self.show()
+
+
+    def setup_drag_and_drop(self):
+        self.setAcceptDrops(True)
+
+    def dragEnterEvent(self, a0: qtg.QDragEnterEvent) -> None:
+        # this detenctions the drag enter event in the main window I guess
+        # mime is a type of Multipurpose Internet Mail Extensions
+        # indicates the nature/format of the data type
+        if a0.mimeData().hasUrls:
+            a0.accept()
+        else:
+            a0.ignore()
+
+    def dragMoveEvent(self, e: qtg.QDragMoveEvent) -> None:
+        # detects the drag move event on the main window
+        if e.mimeData().hasUrls:
+            e.accept()
+        else:
+            e.ignore()
+
+    def dropEvent(self, e: qtg.QDropEvent) -> None:
+        """Enables the actual drop of the file on the main window"""
+        if e.mimeData().hasUrls:
+            e.setDropAction(qtc.Qt.CopyAction)
+            e.accept()
+            for url in e.mimeData().urls():
+                if op_sys == "Darwin":
+                    fname = str(NSURL.URLWithString_(str(url.toString())).filePathUrl().path())
+                else:
+                    fname = str(url.toLocalFile())
+                self.filename = fname
+                print("GOT ADDRESS", self.filename)
+                # Then call the read data function we had from earlier
+                self.readData()
+        else:
+            e.ignore()
 
     # FIXME this kinda works....it doesn't really plot all too well
     # and all the labels are missing or sometimes plain wrong
